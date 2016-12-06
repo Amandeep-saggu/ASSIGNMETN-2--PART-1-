@@ -1,0 +1,8 @@
+C:\Users\123\Desktop\Aman\Aman\Commit 5\bin\TimeTrackerApp.dll.config
+C:\Users\123\Desktop\Aman\Aman\Commit 5\bin\TimeTrackerApp.dll
+C:\Users\123\Desktop\Aman\Aman\Commit 5\bin\TimeTrackerApp.pdb
+C:\Users\123\Desktop\Aman\Aman\Commit 5\bin\EntityFramework.xml
+C:\Users\123\Desktop\Aman\Aman\Commit 5\bin\EntityFramework.SqlServer.xml
+C:\Users\123\Desktop\Aman\Aman\Commit 5\obj\Release\TimeTrackerApp.csprojResolveAssemblyReference.cache
+C:\Users\123\Desktop\Aman\Aman\Commit 5\obj\Release\TimeTrackerApp.dll
+C:\Users\123\Desktop\Aman\Aman\Commit 5\obj\Release\TimeTrackerApp.pdb

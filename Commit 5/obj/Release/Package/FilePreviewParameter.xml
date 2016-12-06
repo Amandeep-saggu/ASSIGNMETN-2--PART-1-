@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="TimeTrackerApp20161206080330" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\123\\Desktop\\Aman\\Aman\\Commit\ 5\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\123\\Desktop\\Aman\\Aman\\Commit\ 5\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="TimeTrackerDBEntities-Web.config Connection String" description="" value="metadata=res://*/DatabaseModel.csdl|res://*/DatabaseModel.ssdl|res://*/DatabaseModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=timetrackeraman.database.windows.net;initial catalog=TimeTrackerDB;user id=timetrackeradmin;password=timetracker@1234;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\123\\Desktop\\Aman\\Aman\\Commit\ 5\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TimeTrackerDBEntities']/@connectionString" />
+  </parameter>
+  <parameter name="TimeTrackerDBEntities1-Web.config Connection String" description="" value="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=timetrackeraman.database.windows.net;initial catalog=TimeTrackerDB;user id=timetrackeradmin;password=timetracker@1234;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\123\\Desktop\\Aman\\Aman\\Commit\ 5\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TimeTrackerDBEntities1']/@connectionString" />
+  </parameter>
+</parameters>

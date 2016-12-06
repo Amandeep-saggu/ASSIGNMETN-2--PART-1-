@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.90">
+  <url>
+    <loc>http://localhost:54055/</loc>
+    <lastmod>2016-11-27T23:55:42+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:54055/Login.aspx</loc>
+    <lastmod>2016-11-27T23:55:42+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:54055/Register.aspx</loc>
+    <lastmod>2016-11-27T23:55:42+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+<url>
+    <loc>http://localhost:54055/ManageCustomers.aspx</loc>
+    <lastmod>2016-11-27T23:55:42+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+<url>
+    <loc>http://localhost:54055/ManageProjects.aspx</loc>
+    <lastmod>2016-11-27T23:55:42+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+<url>
+    <loc>http://localhost:54055/ManageTimeSheet.aspx</loc>
+    <lastmod>2016-11-27T23:55:42+01:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

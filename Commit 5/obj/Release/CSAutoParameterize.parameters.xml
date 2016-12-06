@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="TimeTrackerDBEntities-Web.config Connection String" description="TimeTrackerDBEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/DatabaseModel.csdl|res://*/DatabaseModel.ssdl|res://*/DatabaseModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=timetrackeraman.database.windows.net;initial catalog=TimeTrackerDB;user id=timetrackeradmin;password=timetracker@1234;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\123\\Desktop\\Aman\\Aman\\Commit\ 5\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TimeTrackerDBEntities']/@connectionString" />
+  </parameter>
+  <parameter name="TimeTrackerDBEntities1-Web.config Connection String" description="TimeTrackerDBEntities1 Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=timetrackeraman.database.windows.net;initial catalog=TimeTrackerDB;user id=timetrackeradmin;password=timetracker@1234;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\123\\Desktop\\Aman\\Aman\\Commit\ 5\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TimeTrackerDBEntities1']/@connectionString" />
+  </parameter>
+</parameters>
