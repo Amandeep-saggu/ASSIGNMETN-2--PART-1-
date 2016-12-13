@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TimeTrackerDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="TimeTrackerDBModelStoreContainer">
+          <EntitySet Name="TT_Customers" EntityType="TimeTrackerDBModel.Store.TT_Customers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TT_Enteries" EntityType="TimeTrackerDBModel.Store.TT_Enteries" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TT_Projects" EntityType="TimeTrackerDBModel.Store.TT_Projects" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TT_Users" EntityType="TimeTrackerDBModel.Store.TT_Users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_TT_Customers_TT_Users" Association="TimeTrackerDBModel.Store.FK_TT_Customers_TT_Users">
+            <End Role="TT_Users" EntitySet="TT_Users" />
+            <End Role="TT_Customers" EntitySet="TT_Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TT_Enteries_TT_Projects" Association="TimeTrackerDBModel.Store.FK_TT_Enteries_TT_Projects">
+            <End Role="TT_Projects" EntitySet="TT_Projects" />
+            <End Role="TT_Enteries" EntitySet="TT_Enteries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TT_Projects_TT_Customers" Association="TimeTrackerDBModel.Store.FK_TT_Projects_TT_Customers">
+            <End Role="TT_Users" EntitySet="TT_Users" />
+            <End Role="TT_Projects" EntitySet="TT_Projects" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="TT_Customers">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TT_Enteries">
+          <Key>
+            <PropertyRef Name="EntryID" />
+          </Key>
+          <Property Name="EntryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="StartDate" Type="varchar" MaxLength="50" />
+          <Property Name="StartTime" Type="varchar" MaxLength="50" />
+          <Property Name="EndDate" Type="varchar" MaxLength="50" />
+          <Property Name="EndTime" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TT_Projects">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="varchar" MaxLength="250" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TT_Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="FullName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_TT_Customers_TT_Users">
+          <End Role="TT_Users" Type="TimeTrackerDBModel.Store.TT_Users" Multiplicity="1" />
+          <End Role="TT_Customers" Type="TimeTrackerDBModel.Store.TT_Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TT_Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TT_Customers">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TT_Enteries_TT_Projects">
+          <End Role="TT_Projects" Type="TimeTrackerDBModel.Store.TT_Projects" Multiplicity="1" />
+          <End Role="TT_Enteries" Type="TimeTrackerDBModel.Store.TT_Enteries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TT_Projects">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="TT_Enteries">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TT_Projects_TT_Customers">
+          <End Role="TT_Users" Type="TimeTrackerDBModel.Store.TT_Users" Multiplicity="1" />
+          <End Role="TT_Projects" Type="TimeTrackerDBModel.Store.TT_Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TT_Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TT_Projects">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TimeTrackerDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TimeTrackerDBEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="TT_Customers" EntityType="TimeTrackerDBModel.TT_Customers" />
+          <EntitySet Name="TT_Enteries" EntityType="TimeTrackerDBModel.TT_Enteries" />
+          <EntitySet Name="TT_Projects" EntityType="TimeTrackerDBModel.TT_Projects" />
+          <EntitySet Name="TT_Users" EntityType="TimeTrackerDBModel.TT_Users" />
+          <AssociationSet Name="FK_TT_Customers_TT_Users" Association="TimeTrackerDBModel.FK_TT_Customers_TT_Users">
+            <End Role="TT_Users" EntitySet="TT_Users" />
+            <End Role="TT_Customers" EntitySet="TT_Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TT_Enteries_TT_Projects" Association="TimeTrackerDBModel.FK_TT_Enteries_TT_Projects">
+            <End Role="TT_Projects" EntitySet="TT_Projects" />
+            <End Role="TT_Enteries" EntitySet="TT_Enteries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TT_Projects_TT_Customers" Association="TimeTrackerDBModel.FK_TT_Projects_TT_Customers">
+            <End Role="TT_Users" EntitySet="TT_Users" />
+            <End Role="TT_Projects" EntitySet="TT_Projects" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="TT_Customers">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TT_Users" Relationship="TimeTrackerDBModel.FK_TT_Customers_TT_Users" FromRole="TT_Customers" ToRole="TT_Users" />
+        </EntityType>
+        <EntityType Name="TT_Enteries">
+          <Key>
+            <PropertyRef Name="EntryID" />
+          </Key>
+          <Property Name="EntryID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="StartDate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="StartTime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EndDate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EndTime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="TT_Projects" Relationship="TimeTrackerDBModel.FK_TT_Enteries_TT_Projects" FromRole="TT_Enteries" ToRole="TT_Projects" />
+        </EntityType>
+        <EntityType Name="TT_Projects">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TT_Enteries" Relationship="TimeTrackerDBModel.FK_TT_Enteries_TT_Projects" FromRole="TT_Projects" ToRole="TT_Enteries" />
+          <NavigationProperty Name="TT_Users" Relationship="TimeTrackerDBModel.FK_TT_Projects_TT_Customers" FromRole="TT_Projects" ToRole="TT_Users" />
+        </EntityType>
+        <EntityType Name="TT_Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FullName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="TT_Customers" Relationship="TimeTrackerDBModel.FK_TT_Customers_TT_Users" FromRole="TT_Users" ToRole="TT_Customers" />
+          <NavigationProperty Name="TT_Projects" Relationship="TimeTrackerDBModel.FK_TT_Projects_TT_Customers" FromRole="TT_Users" ToRole="TT_Projects" />
+        </EntityType>
+        <Association Name="FK_TT_Customers_TT_Users">
+          <End Role="TT_Users" Type="TimeTrackerDBModel.TT_Users" Multiplicity="1" />
+          <End Role="TT_Customers" Type="TimeTrackerDBModel.TT_Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TT_Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TT_Customers">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TT_Enteries_TT_Projects">
+          <End Role="TT_Projects" Type="TimeTrackerDBModel.TT_Projects" Multiplicity="1" />
+          <End Role="TT_Enteries" Type="TimeTrackerDBModel.TT_Enteries" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TT_Projects">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="TT_Enteries">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TT_Projects_TT_Customers">
+          <End Role="TT_Users" Type="TimeTrackerDBModel.TT_Users" Multiplicity="1" />
+          <End Role="TT_Projects" Type="TimeTrackerDBModel.TT_Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TT_Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="TT_Projects">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TimeTrackerDBModelStoreContainer" CdmEntityContainer="TimeTrackerDBEntities">
+          <EntitySetMapping Name="TT_Customers">
+            <EntityTypeMapping TypeName="TimeTrackerDBModel.TT_Customers">
+              <MappingFragment StoreEntitySet="TT_Customers">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TT_Enteries">
+            <EntityTypeMapping TypeName="TimeTrackerDBModel.TT_Enteries">
+              <MappingFragment StoreEntitySet="TT_Enteries">
+                <ScalarProperty Name="EntryID" ColumnName="EntryID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TT_Projects">
+            <EntityTypeMapping TypeName="TimeTrackerDBModel.TT_Projects">
+              <MappingFragment StoreEntitySet="TT_Projects">
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TT_Users">
+            <EntityTypeMapping TypeName="TimeTrackerDBModel.TT_Users">
+              <MappingFragment StoreEntitySet="TT_Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
