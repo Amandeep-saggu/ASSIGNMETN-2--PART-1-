@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTrackerApp", "TimeTrackerApp\TimeTrackerApp.csproj", "{C623F50A-CB12-4E62-A28E-DCCEC74DCE51}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GridView_CRUD_StoredProc", "..\..\GridView_CRUD_StoredProc\", "{B6892697-163C-4A0A-99E3-93BA95A79B5B}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/GridView_CRUD_StoredProc"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\GridView_CRUD_StoredProc\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\GridView_CRUD_StoredProc\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/GridView_CRUD_StoredProc"
+		Release.AspNetCompiler.PhysicalPath = "..\..\GridView_CRUD_StoredProc\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\GridView_CRUD_StoredProc\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "54123"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C623F50A-CB12-4E62-A28E-DCCEC74DCE51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C623F50A-CB12-4E62-A28E-DCCEC74DCE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C623F50A-CB12-4E62-A28E-DCCEC74DCE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C623F50A-CB12-4E62-A28E-DCCEC74DCE51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6892697-163C-4A0A-99E3-93BA95A79B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6892697-163C-4A0A-99E3-93BA95A79B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6892697-163C-4A0A-99E3-93BA95A79B5B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6892697-163C-4A0A-99E3-93BA95A79B5B}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
